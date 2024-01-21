@@ -12,6 +12,14 @@ def fetch_rates():
         dct.update(i)
     return dct['rates']
 
+def fetch_rate_by_currency(currency):
+    rates = fetch_rates()
+    for currency_dict in rates:
+        if currency_dict['code'] == currency:
+            return currency_dict['ask']
+
+
+
 def list_to_csv(data_list, csv_filename):
     with open(csv_filename, 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=data_list[0].keys(), delimiter=';')
@@ -19,6 +27,7 @@ def list_to_csv(data_list, csv_filename):
         writer.writeheader()
         # [:-1] to trim last line
         writer.writerows(data_list[:-1])
+
 
 
 rates_list = fetch_rates()
