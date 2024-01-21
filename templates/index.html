@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <form method="post" enctype="multipart/form-data">
-        <label for="calc">Wybierz walutę</label>
-        <select name="calc" id="calc">
+    <form action="/result" method="post" enctype="multipart/form-data">
+        <label>Wybierz walutę</label>
+        <select name="currency">
             {% for rate in rates %}
             <option value="{{rate.code}}">{{ rate.currency }}</option>
             {% endfor %}
         </select>
+        <input type="number" name="amount" placeholder="Wpisz liczbę">
         <br>
-        <input type="submit" value="submit">
+        <button type="submit">
+            Oblicz
+        </button>
     </form>
 </body>
 </html>
