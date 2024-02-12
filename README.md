@@ -12,4 +12,4 @@ Navigate to `http://127.0.0.1:5000/`, select an amount and desired currency. Aft
 - Python
 - HTML
 
-This application uses the API of the Polish National Bank
+This application uses the API of the [Polish National Bank](https://nbp.pl)
